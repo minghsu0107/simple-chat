@@ -5,9 +5,9 @@ redis-server ./redis/6383/redis.conf
 redis-server ./redis/6384/redis.conf
 redis-server ./redis/6385/redis.conf
 
-redis-server -h 127.0.0.1 -p 6383 --slaveof 127.0.0.1 6380
-redis-server -h 127.0.0.1 -p 6384 --slaveof 127.0.0.1 6381
-redis-server -h 127.0.0.1 -p 6385 --slaveof 127.0.0.1 6382
+redis-server -p 6383 --slaveof 127.0.0.1 6380
+redis-server -p 6384 --slaveof 127.0.0.1 6381
+redis-server -p 6385 --slaveof 127.0.0.1 6382
 
 echo "yes" | redis-cli --cluster create \
 	127.0.0.1:6380 \
